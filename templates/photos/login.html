@@ -21,7 +21,7 @@
         <div class="login--wrapper mt-5">
             {% if messages %}
             {% for message in messages %}
-            <p {% if message.tags%} class='alert alert-{{message.tags}} mb-5' {% endif %}>{{message}}</p>
+            <p {% if message.tags%} class='alert alert-{{message.tags}} alert-dismissible fade show auto-dismiss'mb-5' {% endif %}>{{message}}</p>
             {% endfor %}
             {% endif %}
 
@@ -48,6 +48,7 @@
         </div>
 
     </div>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
