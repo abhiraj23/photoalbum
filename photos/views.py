@@ -32,6 +32,11 @@ def user_login(request):
                 login(request, user)
                 messages.success(request, "Logged in successfully !!")
                 return redirect('/gallery/')
+            else:
+                messages.error(request, "Username or password is incorrect.")
+        else:
+            # Form is not valid, maybe due to missing fields or invalid data
+            messages.error(request, "Invalid username or password.")
     form = LoginForm()
     return render(request, "photos/login.html", {'form': form})
 
